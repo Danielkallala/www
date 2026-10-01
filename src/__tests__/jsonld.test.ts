@@ -117,9 +117,9 @@ describe('serializeJsonLd - unchanged behaviour for ordinary values', () => {
   });
 
   it('does not quote numbers or booleans', () => {
-    const out = serializeJsonLd(breadcrumbList([
-      { name: 'Home', url: 'https://www.usewraith.xyz/' },
-    ]));
+    const out = serializeJsonLd(
+      breadcrumbList([{ name: 'Home', url: 'https://www.usewraith.xyz/' }]),
+    );
 
     expect(out).toContain('"position":1');
     expect(out).not.toContain('"position":"1"');
